@@ -1,58 +1,49 @@
-library(murders)
+library(dslabs)
 dslabs(murders)
 
 # --Ranks--
 
-# You can create a data frame using the data.frame function. Here is a quick example:
+#data.frame fonksiyonu ile dataframe oluþturulabilinir.
 
-# Store temperatures in an object 
+# Sýcaklýk deðerleri temp 'e aktarýlýr. 
 temp <- c(35, 88, 42, 84, 81, 30)
 
-# Store city names in an object 
+# Þehir isimleri city 'e aktarýlýr. 
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
 
-# Create data frame with city names and temperature 
+# Þehir isimleri ve sýcaklýk deðerlerini içeren dataframe oluþturulur. 
 city_temps <- data.frame(name = city, temperature = temp)
 
-# Define a variable states to be the state names from the murders data frame
+
 states <- murders$state
 
-# Define a variable ranks to determine the population size ranks 
 ranks <- rank(murders$population)
 
-# Create a data frame my_df with the state name and its rank
+# Murder içerisinde ki state ve rank deðerlerini içeren ayrý bir dataframe oluþturulur.
 my_df <- data.frame(states = states, ranks = ranks)
 
 
 
-# --Data Frames, Ranks and Orders--
+# --Data Frames, Ranks ve Orders--
 
-# his exercise is somewhat more challenging. We are going to repeat the previous exercise
-# but this time order my_df so that the states are ordered from least populous to most.
 
-# Create variables states and ranks to store the state names and ranks by population size 
-# respectively.
-# Create an object ind that stores the indexes needed to order the population values, 
-# using the order command. 
-# For example we could define o <- order(murders$population)
+# popülasyona göre sýralanmýþ state ve rank deðerlerinden oluþan dataframe oluþturun.
 
-# Create a data frame with both variables following the correct order. 
-# Use the bracket operator [ to re-order each column in the data frame.
-# For example, states[o] orders the abbreviations based by population size.
+# ind deðeri içerisine popülasyona göre sýralanmýþ deðerleri ekleyin
+# Örn, o <- order(murders$population)
+# Dataframe i  oluþturacak sütunlarý düzenlemek için "[" kullanýlýr.
 
-# The columns of the data frame must be in the specific 
-# order and have the specific names: states, ranks.
+# Örn, states[o] .
 
-# Define a variable states to be the state names from the murders data frame
+
 states <- murders$state
 
-# Define a variable ranks to determine the population size ranks 
 ranks <- rank(murders$population)
 
-# Define a variable ind to store the indexes needed to order the population values
+# population deðerine göre sýralama yapýlacaðýndan ind nesnesine sýralanmýþ halde population yüklenir.
 ind <- order(murders$population)
 
-# Create a data frame my_df with the state name and its rank and ordered from least populous to most 
+# states ve ranks deðerleri population deðerine göre sýralý bir þekilde olacak dataframe oluþturulur
 my_df <- data.frame(states = states[ind], ranks = ranks[ind])
 
                                                                                                 

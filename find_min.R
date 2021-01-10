@@ -1,22 +1,23 @@
-library(murders)
+library(dslabs)
 dslabs(murders)
 
 # --Which.min--
 
-# We can actually perform the same operation as in the previous exercise using the function which.min.
-# It basically tells us which is the minimum value.
+# which.min() ile en küçük deðerin indexine ulaþýlabilir.
 
-# Find the index of the smallest value for variable total 
+# minimum deðerin indexini verir
 which.min(murders$total)
 
-# Find the index of the smallest value for population
 which.min(murders$population)
 
-# Define the variable i to be the index of the smallest state
+
+# en düþük popülasyona sahip þehirin ismini bulmak için ;
+
+# min popülasyon deðerinin indexi i deðiþkenine aktarýlýr.
 i <- which.min(murders$population)
 
-# Define variable states to hold the states
+# Þehir isimlerini içeren states oluþturulur.
 states <- murders$state
 
-# Use the index you just defined to find the state with the smallest population
+# States içerisinde i indexli deðer gösterilir.
 states[i]
